@@ -17,6 +17,6 @@ def test_info_return():
 	assert x+1 == y,"test failed" 
 
  def test_preprocess():
-  x=5
-  y=6
-  assert z+1 == y, "test failed"
+	x=5
+	y=6
+	assert z+1 == y, "test failed"
