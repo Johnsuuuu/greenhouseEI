@@ -1,7 +1,0 @@
-#!/bin/bash
-
-tr zip {
-    site local {
-       	pfn "file://${PWD}/preprocess.sh"
-    }
-}
