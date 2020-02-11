@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+  - "pypy3"    # set to test the pypy command created to install the dependencies
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install GreenHouseEI
+  - pip install -U pytest
+# command to run tests
+script:
+  - pytest
