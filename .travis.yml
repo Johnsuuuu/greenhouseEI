@@ -8,7 +8,6 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install GreenHouseEI
-  - pip install -U pytest
 # command to run tests
 script:
   - pytest
