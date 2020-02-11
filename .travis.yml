@@ -6,7 +6,7 @@ python:
   - "pypy3"    # set to test the pypy command created to install the dependencies
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - pip install -r dependencies.txt
   - pip install GreenHouseEI
 # command to run tests
 script:
