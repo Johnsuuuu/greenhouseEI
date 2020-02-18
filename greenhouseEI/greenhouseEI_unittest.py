@@ -2,6 +2,8 @@ import os
 import unittest
 from greenhouseEI.tools import *
 
+unittest.TestLoader.sortTestMethodsUsing = None
+
 
 class Testgreenhouse(unittest.TestCase):
     #test info function
