@@ -78,7 +78,7 @@ def preprocess(plant_ID, date, input_path):
                 flag = 1
                 break
         if flag == 0:
-            print('please input correct date or plant name')
+            print("please input correct date or plant name: " + input_path + " CHANGES")
             return 0
             sys.exit()
         output_name = hyp_dir_name.split("_")[2] + "_" + hyp_dir_name.split("_")[3]
