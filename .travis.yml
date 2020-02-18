@@ -10,3 +10,4 @@ install:
 # command to run tests
 script:
   - pytest
+  - python greenhouseEI_unittest.py
