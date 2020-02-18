@@ -30,7 +30,7 @@ def info(plant_ID, date, input_path):
 
         return 1
     except BaseException:
-        print("please input correct date or plant name: " + input_path)
+        print("please input correct date or plant name: " + input_path + " CHANGES")
         return 0
 
 # unzip the folder of images that matches specified plant ID, date, and image type
@@ -59,7 +59,7 @@ def unzip(plant_ID, date, image_type, input_path):
                 print("image type not available")
 
         except BaseException:
-            print("please input correct date or plant name: " + input_path)
+            print("please input correct date or plant name: " + input_path + " CHANGES")
             return 0
 
         else:
