@@ -6,7 +6,7 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install greenhouseEI==1.2
+  - pip install GreenHouseEI==1.2
 # command to run tests
 script:
   - pytest
