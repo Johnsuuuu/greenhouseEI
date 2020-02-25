@@ -12,6 +12,10 @@ import argparse
 # output the types of images that are available in the folder
 def info(plant_ID, date, input_path):
     try:
+        if plant_ID is "" or date is "" or input_path is "":
+            print("please inout correct plant_ID or date or input path")
+            return 0
+
         image_type = set()
         path = input_path
         files = os.listdir(path)
@@ -29,6 +33,7 @@ def info(plant_ID, date, input_path):
             for t in image_type:
                 if t in ["Fluo", "IR", "Hyp", "Vis", "Nir"]:
                     print(t)
+
             return 1
 
         # new data structure
@@ -53,6 +58,10 @@ def info(plant_ID, date, input_path):
 
 # unzip the folder of images that matches specified plant ID, date, and image type
 def unzip(plant_ID, date, image_type, input_path):
+    if plant_ID is "" or date is "" or input_path is "":
+        print("please inout correct plant_ID or date or input path")
+        return 0
+
     if image_type not in ["Fluo", "IR", "Hyp", "Vis", "Nir"]:
         print("please input correct image type")
         return 0
@@ -106,6 +115,9 @@ def unzip(plant_ID, date, image_type, input_path):
 
 # output numpy arrays of Hyperspectral images
 def preprocess(plant_ID, date, input_path):
+    if plant_ID is "" or date is "" or input_path is "":
+        print("please inout correct plant_ID or date or input path")
+        return 0
     flag = 0
     path = input_path
     try:
