@@ -5,8 +5,8 @@ python:
   - "3.8"
 # command to install dependencies
 install:
-  - pip install greenhouseEI
   - pip install -r requirements.txt
+  - pip install greenhouseEI==1.2
 # command to run tests
 script:
   - pytest

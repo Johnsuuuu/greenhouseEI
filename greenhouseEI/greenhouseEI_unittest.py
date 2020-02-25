@@ -27,7 +27,7 @@ class Testgreenhouse(unittest.TestCase):
         self.assertEqual(1, unzip("JS39-65", "2018-04-11", "Hyp", path))
         files = os.listdir(path)
         for file in files:
-            if ("JS39-65" in file) and ("2018-04-11" in file):
+            if ("JS39-65" in file) and ("2018-04-11" in file) and (".zip" not in file):
                 file_name = file
                 print(file_name)
                 break
