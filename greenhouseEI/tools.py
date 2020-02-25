@@ -12,7 +12,7 @@ import argparse
 # output the types of images that are available in the folder
 def info(plant_ID, date, input_path):
     try:
-        if plant_ID is "" or date is "" or input_path is "":
+        if plant_ID == "" or date == "" or input_path == "":
             print("please inout correct plant_ID or date or input path")
             return 0
 
@@ -39,6 +39,10 @@ def info(plant_ID, date, input_path):
         # new data structure
         else:
             date_formatted = date[:4] + date[5:7] + date[8:10]
+            if len(date_formatted) != 8:
+                print("please input correct date format")
+                return 0
+
             with ZipFile(path + '/' + file_name, 'r') as zip:
                 for file in zip.namelist():
                     if date_formatted in file and "RAW" not in file:
@@ -58,7 +62,7 @@ def info(plant_ID, date, input_path):
 
 # unzip the folder of images that matches specified plant ID, date, and image type
 def unzip(plant_ID, date, image_type, input_path):
-    if plant_ID is "" or date is "" or input_path is "":
+    if plant_ID == "" or date == "" or input_path == "":
         print("please inout correct plant_ID or date or input path")
         return 0
 
@@ -93,6 +97,10 @@ def unzip(plant_ID, date, image_type, input_path):
                 folder_name = file_name[0:-4]
 
                 date_formatted = date[:4] + date[5:7] + date[8:10]
+                if len(date_formatted) != 8:
+                    print("please input correct date format")
+                    return 0
+
                 with ZipFile(path + '/' + file_name, 'r') as zip:
                     for file in zip.namelist():
                         if date_formatted in file:
@@ -115,7 +123,7 @@ def unzip(plant_ID, date, image_type, input_path):
 
 # output numpy arrays of Hyperspectral images
 def preprocess(plant_ID, date, input_path):
-    if plant_ID is "" or date is "" or input_path is "":
+    if plant_ID == "" or date == "" or input_path == "":
         print("please inout correct plant_ID or date or input path")
         return 0
     flag = 0
@@ -124,16 +132,20 @@ def preprocess(plant_ID, date, input_path):
         files = os.listdir(path)
         for file in files:
             if "Schnable" in file:
-                if (plant_ID in file) and (date in file) and "npy" not in file and plant_ID is not "" and date is not "":
+                if (plant_ID in file) and (date in file) and "npy" not in file and plant_ID != "" and date != "":
                     hyp_dir_name = file
                     flag = 1
                     break
             else:
-                if (plant_ID in file) and "npy" not in file and plant_ID is not "" and date is not "":
+                if (plant_ID in file) and "npy" not in file and plant_ID != "" and date != "":
                     hyp_dir_name = file
                     flag2 = 0
                     folders = os.listdir(path + '/' + hyp_dir_name)
                     date_formatted = date[:4] + date[5:7] + date[8:10]
+                    if len(date_formatted) != 8:
+                        print("please input correct date format")
+                        return 0
+
                     for folder in folders:
                         if date_formatted in folder:
                             flag = 2
