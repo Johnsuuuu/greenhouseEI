@@ -23,7 +23,7 @@ class Testgreenhouse(unittest.TestCase):
     #test unzip function
     #when you run this test function, there should be .zip file in the folder
     def test_unzip(self):
-        path = os.getcwd()
+        path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
         self.assertEqual(1, unzip("JS39-65", "2018-04-11", "Hyp", path))
         files = os.listdir(path)
         for file in files:
@@ -53,7 +53,7 @@ class Testgreenhouse(unittest.TestCase):
     #test preprocess fuction
     #when you run this test function, there should be the Hyp folder in the folder
     def test_preprocess(self):
-        path = os.getcwd()
+        path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
         unzip("JS39-65", "2018-04-11", "Hyp", path)
         self.assertEqual(1, preprocess("JS39-65", "2018-04-11", path))
 
@@ -89,7 +89,7 @@ class Testgreenhouse(unittest.TestCase):
     #test zip2np function:
     #when you run this test function, there should be only .zip file in the folder
     def test_zip2np(self):
-        path = os.getcwd()
+        path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
         print(path)
         self.assertEqual(1, zip2np("JS39-65", "2018-04-11", path))
 
