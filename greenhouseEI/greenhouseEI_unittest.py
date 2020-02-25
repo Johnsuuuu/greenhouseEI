@@ -5,7 +5,7 @@ from greenhouseEI.tools import *
 
 class Testgreenhouse(unittest.TestCase):
     #test info function
-    def test_info(self):
+    def 1_test_info(self):
         path = os.getcwd()
         print(path)
         self.assertEqual(1, info("JS39-65", "2018-04-11", path))
@@ -28,7 +28,7 @@ class Testgreenhouse(unittest.TestCase):
 
     #test unzip function
     #when you run this test function, there should be .zip file in the folder
-    def test_unzip(self):
+    def 2_test_unzip(self):
         path = os.getcwd()
         self.assertEqual(1, unzip("JS39-65", "2018-04-11", "Hyp", path))
 
@@ -56,7 +56,7 @@ class Testgreenhouse(unittest.TestCase):
 
     #test preprocess fuction
     #when you run this test function, there should be the Hyp folder in the folder
-    def test_preprocess(self):
+    def 3_test_preprocess(self):
         path = os.getcwd()
         print(path)
         self.assertEqual(1, preprocess("JS39-65", "2018-04-11", path))
@@ -79,7 +79,7 @@ class Testgreenhouse(unittest.TestCase):
 
     #test zip2np function:
     #when you run this test function, there should be only .zip file in the folder
-    def test_zip2np(self):
+    def 4_test_zip2np(self):
         path = os.getcwd()
         print(path)
         self.assertEqual(1, zip2np("JS39-65", "2018-04-11", path))
