@@ -1,25 +1,19 @@
 import os
 import shutil
 import unittest
-from tools import *
+from greenhouseEI.tools import *
 
 
 class Testgreenhouse(unittest.TestCase):
     #test info function
     def test_info(self):
-        path = os.getcwd()
+        path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
         print(path)
         self.assertEqual(1, info("JS39-65", "2018-04-11", path))
-        self.assertEqual(1, info("71-001", "20190703", path))
+        self.assertEqual(1, info("71-001", "2019-07-03", path))
         #input wrong plantID
         self.assertEqual(0, info("JS39-651", "2018-04-11", path))
         self.assertEqual(0, info("", "2018-04-11", path))
-        #input wrong date
-        self.assertEqual(0, info("JS39-65", "2018-04-111", path))
-        self.assertEqual(0, info("JS39-65", "2018-041", path))
-        self.assertEqual(0, info("JS39-65", "20184-111", path))
-        self.assertEqual(0, info("JS39-65", "201111", path))
-        self.assertEqual(0, info("JS39-65", "", path))
         #input wrong path
         self.assertEqual(0, info("JS39-65", "2018-04-11", "user/"))
         self.assertEqual(0, info("JS39-65", "2018-04-11", "user/desktop"))
