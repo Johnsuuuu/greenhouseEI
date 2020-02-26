@@ -133,12 +133,13 @@ def preprocess(plant_ID, date, input_path):
         print(files)
         for file in files:
             if "Schnable" in file:
-                if (plant_ID in file) and (date in file) and "npy" not in file and plant_ID != "" and date != "":
+                if (plant_ID in file) and (date in file) and "npy" not in file and plant_ID != "" and date != "" and ".zip" not in file:
                     hyp_dir_name = file
+                    print(hyp_dir_name)
                     flag = 1
                     break
             else:
-                if (plant_ID in file) and "npy" not in file and plant_ID != "" and date != "":
+                if (plant_ID in file) and "npy" not in file and plant_ID != "" and date != "" and ".zip" not in file:
                     hyp_dir_name = file
                     flag2 = 0
                     folders = os.listdir(path + '/' + hyp_dir_name)
@@ -168,6 +169,7 @@ def preprocess(plant_ID, date, input_path):
 
             discard_imgs = ['0_0_0.png', '1_0_0.png']
             dir_path = Path(hyp_dir)
+            print("dir", dir_path)
             dir_path = dir_path / 'Hyp_SV_90'
             if not dir_path.exists():
                 sys.exit('Hyp images are compressed, please unzip it first')
