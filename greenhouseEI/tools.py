@@ -130,6 +130,7 @@ def preprocess(plant_ID, date, input_path):
     path = input_path
     try:
         files = os.listdir(path)
+        print(files)
         for file in files:
             if "Schnable" in file:
                 if (plant_ID in file) and (date in file) and "npy" not in file and plant_ID != "" and date != "":
