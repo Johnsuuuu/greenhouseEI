@@ -42,7 +42,11 @@ class Testgreenhouse(unittest.TestCase):
         self.assertEqual(0, unzip("JS9-65", "2018-04-11", "Hyp", path))
         self.assertEqual(0, unzip("J39-65", "2018-04-11", "Hyp", path))
         self.assertEqual(0, unzip("", "2018-04-11", "Hyp", path))
-
+        #input wrong date
+        self.assertEqual(0, unzip("JS39-65", "2018-04-111", "Hyp", path))
+        self.assertEqual(0, unzip("JS39-65", "2018-041", "Hyp", path))
+        self.assertEqual(0, unzip("JS39-65", "20184-111", "Hyp", path))
+        self.assertEqual(0, unzip("JS39-65", "", "Hyp", path))
         #input wrong image type
         self.assertEqual(0, unzip("JS39-65", "2018-0411", "yp", path))
         self.assertEqual(0, unzip("JS39-65", "2018-0411", "Hp", path))

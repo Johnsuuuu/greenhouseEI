@@ -63,7 +63,7 @@ def info(plant_ID, date, input_path):
 # unzip the folder of images that matches specified plant ID, date, and image type
 def unzip(plant_ID, date, image_type, input_path):
     if plant_ID == "" or date == "" or input_path == "":
-        print("please inout correct plant_ID or date or input path")
+        print("please input correct plant_ID or date or input path")
         return 0
 
     if image_type not in ["Fluo", "IR", "Hyp", "Vis", "Nir"]:
@@ -74,9 +74,14 @@ def unzip(plant_ID, date, image_type, input_path):
         try:
             files = os.listdir(path)
             for file in files:
-                if plant_ID in file and "zip" in file:
-                    file_name = file
-                    break
+                if "Schnable" in file:
+                    if plant_ID in file and date in file and "zip" in file:
+                        file_name = file
+                        break
+                else:
+                    if plant_ID in file and "zip" in file:
+                        file_name = file
+                        break
             # old data structure
             if "Schnable" in file_name:
                 i = 0
