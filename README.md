@@ -44,7 +44,7 @@
 * `python3 -m greenhouseEI.tools zip2np -n JS39-65 -d 2018-04-11 -p /Users/john/PycharmProjects/Library_SD/output`
 
 ## Demonstration
-![](https://github.com/collincornman/greenhouseEI/tree/master/illustrations/greenhouseEI_guide.png)
+![](https://github.com/collincornman/greenhouseEI/blob/master/illustrations/greenhouseEI_guide.png)
 
 
 
